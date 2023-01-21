@@ -30,5 +30,40 @@ class newcontroller extends Controller
 // }
 //------------------------------------------------------------
 
+//using middleware to  check logged person is admin are not.
+
+// public function show(){
+//         return view('home');
+// }
+
+// public function list(request $request){
+//     $name = $request->input('name');
+//     $pwd = $request->input('pwd');
+
+//     //checking in contoller if uer
+// //    if($name=='admin'){
+// //     return view('dashboard');
+// //    }
+// //    else{
+// //             return redirect()->route('namedroute');
+// //    }
+// return "success";
+
+// }
+//---------------------------------------------------------------------------------------------------
+//to check middleware with fully classified name
+// public function show(){
+//         return view('home');
+// }
+
+// public function list(request $request){
+//     $name = $request->input('name');
+//     $pwd = $request->input('pwd');
+
+// return "success";
+
+// }
+//----------------------------------------------------------------------------------------------------------
+
 
 }

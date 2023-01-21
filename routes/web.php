@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\newcontroller;
+use App\Http\Controllers\newinvokable;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Middleware\EnsureTokenIsValid;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -99,3 +103,33 @@ use Illuminate\Http\Request;
 //     return $name->$name ;
 // })->name('routename')->where(['name' => '[a-z]+']);
 //-------------------------------------------------------------------------
+// Route::view('/','home')->name('namedroute');
+// Route::post('/insert',[newcontroller::class,'list'])->middleware('Tokenkvalid');
+//-------------------------------------------------------------------------
+// Route::get('month/{num}', function ($num) {
+//     if($num==1){
+//         return 'january';
+//     }elseif($num==2){
+//         return 'february';
+//     } elseif ($num == 2) {
+//         return 'march';
+//     }
+
+// })->middleware('Tokenkvalid');
+//-----------------------------------------------------------------------------------
+// //middleware to check admin are not
+// Route::view('/','home')->name('namedroute');  //show home page
+// Route::post('/insert', [newcontroller::class, 'list'])->middleware('Tokenkvalid'); //insert action done and
+// // check admin are not in middleware
+// Route::view('dashboard', 'dashboard'); //show dashboard page
+//------------------------------------------------------------------------------------
+//to check middleware rotes with fully classified middleware name ->middleware(EnsureTokenIsValid::class)
+//to use this method include use App\Http\Middleware\EnsureTokenIsValid; in top
+// Route::view('/','home')->name('namedroute');  //show home page
+// Route::post('/insert', [newcontroller::class, 'list'])->middleware(EnsureTokenIsValid::class); //insert action done and
+// // check admin are not in middleware
+// Route::view('dashboard', 'dashboard'); //show dashboard page
+//---------------------------------------------------------------------------------------------
+//invokable contrller using
+Route::get('/', newinvokable::class);
+
