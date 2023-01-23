@@ -131,5 +131,38 @@ use App\Http\Middleware\EnsureTokenIsValid;
 // Route::view('dashboard', 'dashboard'); //show dashboard page
 //---------------------------------------------------------------------------------------------
 //invokable contrller using
-Route::get('/', newinvokable::class);
+// Route::get('/', newinvokable::class);
+//---------------------------------------------------------------------------------------------
+// Route::get('/',function (){
+//     // return view('view', ['name' => 'Arun','age'=>'21' ]);
 
+// });
+//-------------------------------------------------------------------------------------------------
+
+// Route::get('/set-cookie', function () {
+//     return response('Cookie set successfully')->cookie('language', 'fr', 120);
+//  });
+
+// Route::get('/', [newcontroller::class, 'index']);
+
+//-------------------------------------------------------------------------------------------------------
+
+// Route::get('/hello', function (Request $request) {
+//     $uri = $request->path();
+//     return $uri;
+// });
+
+//---------------------------------------------------------------------------------------------------
+// Route::get('/',[newcontroller::class,'index']);
+
+//--------------------------------------------------------------------------------------------------
+//group route
+// Route::prefix('company')->group(function () {
+//     Route::get('/index', [newcontroller::class, 'index']);
+
+//     Route::get('/contenttype', [newcontroller::class, 'contenttype']);
+// });
+//-------------------------------------------------------------------------------------------------
+// Route::get('/', [newcontroller::class, 'foreachtry']);
+//-----------------------------------------------------------------------------------------------------------
+Route::get('/',[newcontroller::class,'response']);
